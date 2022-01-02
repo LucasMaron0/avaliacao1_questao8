@@ -28,11 +28,12 @@ public class Main {
 
     }
     
+    // função para registrar Funcionarios no Array.
     
     public static void registraFuncionarios(){
         
         
-        // pergunta quantos usários vão ser registrados no Array
+        // o usuário escolhe quantos serão registrados.
         
         System.out.println("Quantos usuários deseja registrar? ");
         int numeroRegistros = Integer.parseInt(input.nextLine());
@@ -63,17 +64,15 @@ public class Main {
     }
     
     
+    // função para imprimir todos os Funcionarios registrados no Array.
     
-    public static void imprimeFuncionarios(){
-        
-        // função para imprimir todos os Funcionarios registrados no Array.
-        
+    public static void imprimeFuncionarios(){ 
+   
+ 
         for(Funcionario f:funcionarios){
+         
+        String tipo; // String que muda de acordo com o salário, para imprimir corretamente se é Bonificação ou desconto
         
-        
-        // String que muda de acordo com o salário, para imprimir corretamente se é Bonificação ou desconto. 
-        
-        String tipo;
         if ( f.getSalario()>=2000){
             
             tipo = "Desconto: ";
