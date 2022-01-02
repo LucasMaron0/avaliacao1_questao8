@@ -14,6 +14,31 @@ public class Funcionario {
         private double salario;
         private double bonificaçao;
         private double salarioLiquido;
+        
+        
+        
+        
+    // a função  defineSalarioBonificaçao é chamada sempre que é atribuido um valor ao salário, ou seja
+    // no construtor (que pede um nome e um salario) ou no setter. Bonifição e salário liquido nao podem ser definidos diretamente,
+    // quando é atribuido um Salário a função defineSalarioBonificaçao já deifne esses dois valores automaticamente.
+        
+    public void defineSalarioBonificaçao(double salario){
+         
+        if (salario <=1000 ){
+            bonificaçao = 1.20; //+20%
+        }
+        
+        if (salario >1000 && salario <2000){
+            bonificaçao = 1.10; //+10%
+        }
+       
+        if (salario >=2000 ){
+            bonificaçao = 0.90; //-10%
+        }
+         
+        salarioLiquido = salario*bonificaçao;
+     }   
+     
 
     public Funcionario(String nome, double salario) {
         this.nome = nome;
@@ -55,23 +80,7 @@ public class Funcionario {
     }
 
     
-     public void defineSalarioBonificaçao(double salario){
-         
-        if (salario <=1000 ){
-            bonificaçao = 1.20;
-        }
-        
-        if (salario >1000 && salario <2000){
-            bonificaçao = 1.10;
-        }
-       
-        if (salario >=2000 ){
-            bonificaçao = 0.90;
-        }
-         
-        salarioLiquido = salario*bonificaçao;
-     }   
-     
+ 
      
         
 }
