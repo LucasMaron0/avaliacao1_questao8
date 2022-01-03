@@ -83,9 +83,15 @@ public class Main {
         
         System.out.println("Nome: " + f.getNome() );
         System.out.println("Salario: " + f.getSalario());      
-        System.out.println(tipo + " " + ((f.getBonificaçao()*100 )-100) + "%" ); // realiza a conta *100-100 para pegar o valor em %, já que fica armazendo como multiplicador,  EX: 1.10, (1.10*100)-100 = 10%    
+        
+        // realiza a conta *100-100 para pegar o valor em %, já que fica armazendo como multiplicador,  EX: 1.10, (1.10*100)-100 = 10%    
+        
+        System.out.println(tipo + ((f.getBonificaçao()*100)- 100) + "% "+   //bonificação/desconto em %
+                    " ("+ (f.getSalarioLiquido() - f.getSalario()) +"$)"); //bonificação/desconto em reais
+               
         System.out.println("Salario Liquido: " + f.getSalarioLiquido() );
-    }
+   
+        }
         
     }
     

@@ -12,42 +12,16 @@ public class Funcionario {
         
         private String nome;
         private double salario;
-        private double bonificaçao;
-        private double salarioLiquido;
         
-        
-        
-        
-    // a função  defineSalarioBonificaçao é chamada sempre que é atribuido um valor ao salário, ou seja
-    // no construtor (que pede um nome e um salario) ou no setter. Bonifição e salário liquido nao podem ser definidos diretamente,
-    // quando é atribuido um Salário a função defineSalarioBonificaçao já deifne esses dois valores automaticamente.
-        
-    public void defineSalarioBonificaçao(double salario){
-         
-        if (salario <=1000 ){
-            bonificaçao = 1.20; //+20%
-        }
-        
-        if (salario >1000 && salario <2000){
-            bonificaçao = 1.10; //+10%
-        }
+
+   // a classe Funcionario não tem atributos para a Bonifição e o salário liquido, 
+  //apenas seus métodos getters, que  realizam as fórmulas e retornam seus valores
        
-        if (salario >=2000 ){
-            bonificaçao = 0.90; //-10%
-        }
-         
-        salarioLiquido = salario*bonificaçao;
-     }   
-     
 
     public Funcionario(String nome, double salario) {
         this.nome = nome;
         this.salario = salario;
-        
-        defineSalarioBonificaçao(salario);
-        
-        
-        
+  
     }
 
     public String getNome() {
@@ -65,18 +39,32 @@ public class Funcionario {
 
     public void setSalario(float salario) {
         this.salario = salario;
-        
-         defineSalarioBonificaçao(salario);
-                 
+            
     }
 
     public double getBonificaçao() {
-        return bonificaçao;
+        
+        double bonificaçao = 1.00;
+        
+         if (salario <=1000 ){
+             bonificaçao = 1.20; //+20%
+        }
+        
+        if (salario >1000 && salario <2000){
+            bonificaçao = 1.10; //+10%
+        }
+       
+        if (salario >=2000 ){
+            bonificaçao = 0.90; //-10%
+        }
+        
+        
+        return bonificaçao; 
     }
 
     
     public double getSalarioLiquido() {
-        return salarioLiquido;
+        return salario* getBonificaçao();
     }
 
     
