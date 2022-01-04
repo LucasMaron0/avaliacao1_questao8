@@ -44,18 +44,18 @@ public class Funcionario {
 
     public double getBonificaçao() {
         
-        double bonificaçao = 1.00;
+        double bonificaçao = 0.00;
         
          if (salario <=1000 ){
-             bonificaçao = 1.20; //+20%
+             bonificaçao = 0.20; //+20%
         }
         
         if (salario >1000 && salario <2000){
-            bonificaçao = 1.10; //+10%
+            bonificaçao = 0.10; //+10%
         }
        
         if (salario >=2000 ){
-            bonificaçao = 0.90; //-10%
+            bonificaçao = -0.10; //-10%
         }
         
         
@@ -64,11 +64,8 @@ public class Funcionario {
 
     
     public double getSalarioLiquido() {
-        return salario* getBonificaçao();
+        return (salario * getBonificaçao()) + salario;
     }
 
-    
- 
-     
-        
+   
 }
