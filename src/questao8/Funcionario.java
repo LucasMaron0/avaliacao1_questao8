@@ -67,7 +67,7 @@ public class Funcionario {
         
     }
 
-    public void setSalario(float salario) {
+    public void setSalario(double salario) {
         this.salario = salario;     
         defineBonificacao();
     }
