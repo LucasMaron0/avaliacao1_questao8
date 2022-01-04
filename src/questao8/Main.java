@@ -81,14 +81,13 @@ public class Main {
             tipo = "Bonificação: ";
         }
         
+        System.out.println("\n");
         System.out.println("Nome: " + f.getNome() );
-        System.out.println("Salario: " + f.getSalario());      
+        System.out.println("Salario: " + f.getSalario());  
         
-        // realiza a conta *100 para pegar o valor em %, já que fica armazendo como multiplicador,  EX: 0.10, (0.10*100) = 10%    
-        
-        System.out.println(tipo +  //vai mudar caso seja desconto ou bonificação
-                          (f.getBonificaçao()*100) + "%  " +   //bonificação/desconto em %
-                     "("+ (f.getSalario()*f.getBonificaçao()) +"$)"); //bonificação/desconto em reais
+        System.out.println(tipo +                                     //vai mudar caso seja desconto ou bonificação
+                          (f.getBonificacaoPorcentagem()) + "%  " +   //bonificação/desconto em %
+                     "("+ (f.getBonificacaoValor()) +"$)");           //bonificação/desconto em reais
                
         System.out.println("Salario Liquido: " + f.getSalarioLiquido() );
    
