@@ -12,6 +12,8 @@ import java.util.Scanner;
  * @author lucas
  */
 public class Main {
+
+    //teste git no mac
     
    static  ArrayList <Funcionario> funcionarios = new ArrayList();
    static Scanner input = new Scanner(System.in);
